@@ -93,14 +93,11 @@
       let param = getAllUrlParams();
       if (
         (param['tenant'] != undefined && param['tenant'] != '') &&
-        (param['tablename'] != undefined && param['tablename'] != '') &&
-        (param['triggername'] != undefined && param['triggername'] != '') &&
-        (param['sequencenumber'] != undefined && param['sequencenumber'] != '')
+        (param['filename'] != undefined && param['filename'] != '')
       ) {
         let link = document.getElementById('git');
         let url = 'https://github.com/vams-git/extJS/blob/main/'
-          + param['tenant'] + '/' + param['tablename'] + '/'
-          + param['triggername'] + '/' + param['sequencenumber'] + '.sql';
+          + param['tenant'] + '/' + param['filename'] + '.js';
         link.href = url;
         link.target = '_blank';
         link.classList.remove('hide');
