@@ -694,7 +694,7 @@
         month: "short",
         day: "numeric"
       };
-      var orgs = ['TAS', 'WAU', 'NWA', 'WAR', 'SAU', 'VIC', 'NSW', 'QLD', 'FCG', 'NTE','NVE','NVW','NVP'];
+      var orgs = ['TAS', 'WAU', 'NWA', 'WAR', 'SAU', 'VIC', 'NSW', 'QLD', 'FCG', 'NTE','NVE','NVW','NVP','NVQ'];
       var options = {};
       orgs.forEach(function (e) {
         options[e] = JSON.parse(JSON.stringify(option))
@@ -708,6 +708,7 @@
       options['NSW']['timeZone'] = 'Australia/Sydney';
       options['QLD']['timeZone'] = 'Australia/Brisbane';
       options['FCG']['timeZone'] = 'Australia/Brisbane';
+      options['NVQ']['timeZone'] = 'Australia/Brisbane';
       options['NTE']['timeZone'] = 'Australia/Darwin';
       options['NVE']['timeZone'] = 'Australia/Perth';
       options['NVW']['timeZone'] = 'Australia/Perth';
@@ -927,7 +928,7 @@
         form.broken = true;
         checklist.broken = true;
       }
-      else if (['TAS', 'WAU', 'NWA', 'WAR', 'SAU', 'VIC', 'NSW', 'QLD', 'FCG', 'NTE','NVE','NVW','NVP'].indexOf(param.organization) == -1) {
+      else if (['TAS', 'WAU', 'NWA', 'WAR', 'SAU', 'VIC', 'NSW', 'QLD', 'FCG', 'NTE','NVE','NVW','NVP','NVQ'].indexOf(param.organization) == -1) {
         alert.add({
           text: 'This function not applicable for this organization',
           type: 'error'
