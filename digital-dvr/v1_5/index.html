@@ -415,14 +415,14 @@
                                   <div class="col">
                                     <input type="radio" class="btn-check" @change="snycItems(item,$event)"
                                       v-model.lazy="item.ack_yes" :id="'FREE'+item.ack_code+'_chk_yes'"
-                                      :value="+" autocomplete="off" :disabled="data.status">
+                                      value="+" :disabled="data.status">
                                     <label class="btn btn-outline-primary"
                                       :for="'FREE'+item.ack_code+'_chk_yes'"><i class="bi bi-check-lg"></i></label>
                                     </div>
                                   <div class="col">
                                     <input type="radio" class="btn-check" @change="snycItems(item,$event)"
                                       v-model.lazy="item.ack_yes" :id="'FREE'+item.ack_code+'_chk_no'"
-                                      :value="-" autocomplete="off" :disabled="data.status">
+                                      value="-" :disabled="data.status">
                                     <label class="btn btn-outline-primary"
                                       :for="'FREE'+item.ack_code+'_chk_no'"><i class="bi bi-x-lg"></i></label>
                                   </div>
