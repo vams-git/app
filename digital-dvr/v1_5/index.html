@@ -352,7 +352,7 @@
                                 <template v-else></template>
                               </div>
                               <div class="col-md hstack gap-2 fw-light"
-                                v-if="['03','04','13','14','15'].indexOf(item.ack_type) != -1">
+                                v-if="['02','03','04','13','14','15'].indexOf(item.ack_type) != -1">
                                 <input v-if="item.ack_type == 13" type="date"
                                   class="form-control border-0 border-bottom" :id="'FREE'+item.ack_code"
                                   autocomplete="off" v-model="item.ack_checklistdate" @input="snycItems(item,$event)"
@@ -394,6 +394,26 @@
                                     Enter faults identified in the Faults
                                     section </span>
                                 </div>
+
+                                <div v-if="item.ack_type == 02" class="my-2 hstack gap-2">
+                                  <div class="col d-none">
+                                    <input type="radio" v-model="item.ack_yes"
+                                      :id="'FREE'+item.ack_code+'_chk_null'" value="" autocomplete="off" checked>
+                                  </div>
+                                  <div class="col">
+                                    <input type="radio" class="btn-check" @change="snycItems(item,$event)"
+                                      v-model.lazy="item.ack_yes" :id="'FREE'+item.ack_code+'_chk_yes'"
+                                      :value="+" autocomplete="off" :disabled="data.status">
+                                    <label class="btn btn-outline-primary"
+                                      :for="'FREE'+item.ack_code+'_chk_yes'"><i class="bi bi-check-lg"></i></label>
+                                    <input type="radio" class="btn-check" @change="snycItems(item,$event)"
+                                      v-model.lazy="item.ack_yes" :id="'FREE'+item.ack_code+'_chk_no'"
+                                      :value="-" autocomplete="off" :disabled="data.status">
+                                    <label class="btn btn-outline-primary"
+                                      :for="'FREE'+item.ack_code+'_chk_no'"><i class="bi bi-x-lg"></i></label>
+                                  </div>
+                                </div>
+
                                 <button type="button" :id="'REFRESH'+item.ack_code" v-show="!data.status"
                                   :class="'ms-auto btn btn-sm rounded-circle btn-outline-secondary '+[ ['Unit/Fleet No','Registration No','Worker Name'].indexOf(item.ack_desc) != -1 ? ' d-none' : '']"
                                   @click="resetItems(item,$event)"><i class="bi bi-arrow-repeat"></i></button>
