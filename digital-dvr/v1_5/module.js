@@ -600,6 +600,8 @@ var alert_mod = {
         if (input['ack_yes'] == undefined) { input['ack_yes'] = '' }
         if (input['ack_no'] == undefined) { input['ack_no'] = '' }
         if (input['ack_yes'] == '0' && input['ack_no'] == '0') { input['ack_yes'] = ''; input['ack_no'] = '' }
+        if (Math.abs(input['ack_yes']) == 1) { input['ack_yes'] = '+' }
+        if (Math.abs(input['ack_no']) == 1) { input['ack_no'] = '+' }
         if (input['ack_ok'] == undefined) { input['ack_ok'] = '' }
         if (input['ack_adjusted'] == undefined) { input['ack_adjusted'] = '' }
         if (input['ack_ok'] == '-' && input['ack_adjusted'] == '-') { input['ack_ok'] = ''; input['ack_adjusted'] = '' }
