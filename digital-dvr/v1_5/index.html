@@ -376,7 +376,7 @@
                                   <span class="input-group-text border-0 bg-light border-bottom">{{ item.ack_uom
                                     }}</span>
                                 </div>
-                                <div v-if="item.ack_type == 03" class="my-2 hstack gap-2">
+                                <div v-if="item.ack_type == 03" class="my-2 hstack gap-2 me-auto">
                                   <div class="col d-none">
                                     <input type="radio" v-model="item.ack_finding"
                                       :id="'FREE'+item.ack_code+'_chk_null'" value="" autocomplete="off" checked>
@@ -395,7 +395,7 @@
                                     section </span>
                                 </div>
                                 <button type="button" :id="'REFRESH'+item.ack_code" v-show="!data.status"
-                                  :class="'ms-auto btn btn-sm rounded-circle btn-outline-secondary '+[ ['Unit/Fleet No','Registration No','Worker Name'].indexOf(item.ack_desc) != -1 ? ' d-none' : '']"
+                                  :class="'btn btn-sm rounded-circle btn-outline-secondary '+[ ['Unit/Fleet No','Registration No','Worker Name'].indexOf(item.ack_desc) != -1 ? ' d-none' : '']"
                                   @click="resetItems(item,$event)"><i class="bi bi-arrow-repeat"></i></button>
                                 <i class="bi bi-circle pe-2"
                                   v-if="!getItemCompleted(item) && !item.updated && !item.process"></i>
@@ -411,7 +411,7 @@
                                   v-if="getItemCompleted(item) && item.updated && item.process"></i>
                               </div>
                               <div class="hstack gap-2 fw-light" v-if="['02'].indexOf(item.ack_type) != -1">
-                                <div class="my-2 hstack gap-2">
+                                <div class="my-2 hstack gap-2 me-auto">
                                   <div class="col">
                                     <input type="radio" class="btn-check" @change="snycItems(item,$event)"
                                       v-model.lazy="item.ack_yes" :id="'FREE'+item.ack_code+'_chk_yes'"
@@ -433,7 +433,7 @@
                                     item.ack_taskchecklistcode_comments }}</p>
                                 </div>
                                 <button type="button" :id="'REFRESH'+item.ack_code" v-show="!data.status"
-                                  class="ms-auto btn btn-sm rounded-circle btn-outline-secondary"
+                                  class="btn btn-sm rounded-circle btn-outline-secondary"
                                   @click="resetItems(item,$event)"><i class="bi bi-arrow-repeat"></i></button>
                                 <i class="bi bi-circle pe-2"
                                   v-if="!getItemCompleted(item) && !item.updated && !item.process"></i>
