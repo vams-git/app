@@ -339,7 +339,7 @@
                             :key="item.ack_code">
                             <div class="accordion-body py-2 row">
                               <div class="col col-md-4 d-flex align-items-center"
-                                v-if="['03','04','13','14','15'].indexOf(item.ack_type) != -1">
+                                v-if="['02','03','04','13','14','15'].indexOf(item.ack_type) != -1">
                                 <span>{{ item.ack_desc }}</span>
                                 <p v-if="item.ack_taskchecklistcode_comments != ''" class="pre-line m-0">{{
                                   item.ack_taskchecklistcode_comments }}</p>
